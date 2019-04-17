@@ -1,11 +1,10 @@
 $icon-font: 'Font Awesome 5 Free' !default;
 $code-font: 'Fira Code' !default;
 $text-font: 'Inter' !default;
+
 $bomb-icon: "\f1e2";
 $warn-icon: "\f071";
 $info-icon: "\f05a";
-$plus-icon: "\f0fe";
-$minus-icon: "\f146";
 
 @import 'details';
 @import 'mixin';
@@ -35,7 +34,7 @@ $minus-icon: "\f146";
   --code-block-text: #abb2bf;
   --code-block-shadow: #{$black-fade-50};
 
-  --code-block-base: #{atom-dark-base};
+  --code-block-base: #{$atom-dark-base};
   --code-block-border: #2d6da3;
   --code-block-blue: #61aeee;
   --code-block-red: #f92627;
