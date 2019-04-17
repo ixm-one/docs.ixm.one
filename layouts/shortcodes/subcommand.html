@@ -1,0 +1,22 @@
+{{ $data := $.Page.Resources.GetMatch (printf "%s.yml" (.Get 0)) | unmarshal }}
+{{ $ids := slice $data.base $data.name }}
+<section id="{{$data.base}}-{{$data.name | anchorize}}">
+<h2>{{$data.base}}({{$data.name}})</h2>
+<h3>Signature</h3>
+<pre><code>
+{{- $data.base}}({{$data.name}} <{{$data.base}}> {{$data.signature}})
+</code></pre>
+<h3 class="description">Description</h3>
+<p>{{$data.description | htmlEscape | markdownify }}</p>
+{{with $data.parameters}}
+{{ $id := delimit ($ids | append "parameters") " " | anchorize }}
+<h3 class="parameters" id="{{$id}}">Parameters</h3>
+  <dl class="parameters">
+  {{ range $parameter, $description := . }}
+    {{ $id := delimit ($ids | append $parameter) " " | anchorize }}
+    <dt id="{{$id}}">{{$parameter}}</dt>
+    <dd>{{$description | htmlEscape | markdownify }}</dd>
+  {{end}}
+  </dl>
+{{end}}
+</section>

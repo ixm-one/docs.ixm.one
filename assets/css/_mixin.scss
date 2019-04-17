@@ -1,0 +1,9 @@
+@mixin font-awesome ($icon: "\f06a", $weight: 900) {
+  &::before {
+    font-family: $icon-font;
+    font-weight: $weight;
+    font-size: 1.1em;
+    content: $icon;
+    margin-right: .4rem;
+  }
+}

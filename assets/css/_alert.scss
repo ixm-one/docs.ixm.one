@@ -1,0 +1,70 @@
+@import 'color';
+
+@mixin round-corners($location) {
+  border-#{$location}: {
+    left-radius: 3px;
+    right-radius: 3px;
+  }
+}
+
+main > aside {
+  display: grid;
+  border: 2px solid var(--aside-border);
+  border-radius: 3px;
+  margin: {
+    top: .5rem;
+    bottom: .5rem;
+  }
+  p {
+    margin: 0;
+    color: var(--font-color);
+    padding: .5em;
+    &:first-child {
+      background-color: var(--font-color);
+      color: var(--background-color);
+
+      @include font-awesome;
+      //@include round-corners(top);
+
+      font-weight: bold;
+    }
+    &:last-child { @include round-corners(bottom); }
+  }
+
+
+  &.danger {
+    border: 2px solid var(--danger-border);
+    p {
+      color: $gray-900;
+      background-color: var(--danger-text);
+      &:first-child {
+        background-color: var(--danger-background);
+        color: var(--danger-text);
+        @include font-awesome($bomb-icon);
+      }
+    }
+  }
+
+  &.warning {
+    p {
+      background-color: $yellow-100;
+      &:first-child {
+        color: $yellow-000;
+        background-color: $yellow-700;
+        @include font-awesome($warn-icon);
+      }
+    }
+  }
+
+  &.tip {
+    p {
+      background-color: $green-100;
+      color: $green-900;
+      &:first-child {
+        color: $green-000;
+        background-color: $green-500;
+        @include font-awesome($info-icon);
+      }
+    }
+  }
+}

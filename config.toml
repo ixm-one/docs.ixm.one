@@ -1,0 +1,41 @@
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+enableMissingTranslationPlaceholders = "true"
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
+footnoteReturnLinkContents = "↩"
+preserveTaxonomyNames = true
+enableInlineShortcodes = true
+enableEmoji = true
+uglyUrls = true
+baseURL = "/"
+languageCode = "en"
+
+title = "Izzy's eXtension Modules"
+copyright = "IXM Developers"
+
+[blackfriday]
+hrefTargetBlank = true
+
+[outputs]
+home = ["HTML"]
+section = ["HTML"]
+
+[permalinks]
+tutorials = ":section/:title"
+apis = ":section/:title"
+
+[languages.en]
+languageName = "English"
+weight = 1
+
+[languages.es]
+languageName = "Spanish"
+weight = 2
+
+[languages.fr]
+languageName = "French"
+weight = 3
+
+[languages.de]
+languageName = "German"
+weight = 4

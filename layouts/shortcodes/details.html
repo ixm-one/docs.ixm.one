@@ -1,0 +1,4 @@
+<details open>
+  {{with .Get 0}}<summary>{{.|markdownify}}</summary>{{end}}
+  <p>{{.Inner|markdownify}}</p>
+</details>

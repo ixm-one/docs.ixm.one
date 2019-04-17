@@ -1,0 +1,21 @@
+{{ define "head" }}
+<title>{{.Title}} &mdash; {{.Site.Title}}</title>
+{{end}}
+
+{{define "main"}}
+<h1><a href="{{.Site.Home.Permalink}}">{{.Title}}</a></h1>
+{{.Content}}
+<hr>
+<nav>
+  {{with .NextInSection}}
+  <a title="{{.Title}}" href="{{.RelPermalink}}">{{i18n "prev"}}</a>
+  {{else}}
+  <span>{{i18n "prev"}}</span>
+  {{end}}
+  {{with .PrevInSection}}
+  <a title="{{.Title}}" href="{{.RelPermalink}}">{{i18n "next"}}</a>
+  {{else}}
+  <span>{{i18n "next"}}</span>
+  {{end}}
+</nav>
+{{end}}

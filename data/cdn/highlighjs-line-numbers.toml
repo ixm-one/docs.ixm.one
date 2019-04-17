@@ -1,0 +1,7 @@
+root = "//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js"
+version = "2.6.0"
+crossorigin = "anonymous"
+
+[[script]]
+file ="highlightjs-line-numbers.min.js"
+integrity = "sha256-T4AZaRKqdmdqjUHbW9K6PgHBs2Ox30BapUd/BLZYUsg="

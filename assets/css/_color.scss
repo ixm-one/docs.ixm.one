@@ -1,0 +1,153 @@
+// non-palette colors...
+
+$atom-dark-base: #282c34;
+$atom-dark-mono-low: #abb2bf;
+$atom-dark-mono-mid: #818896;
+$atom-dark-mono-high: #5c6370;
+$atom-dark-cyan: #56b6c2;
+$atom-dark-blue: #61aeee;
+$atom-dark-purple: #c678dd;
+$atom-dark-green: #98c379;
+$atom-dark-orange: #e06c75;
+$atom-dark-red: #be5046;
+$atom-dark-brown: #d19a66;
+$atom-dark-yellow: #e6c07b;
+
+$atom-light-base: #fafafa;
+$atom-light-mono-low: #383a42;
+$atom-light-mono-mid:#686b77;
+$atom-light-mono-high:#a0a1a7;
+$atom-light-cyan: #0184bb;
+$atom-light-blue: #4078f2;
+$atom-light-purple: #a626a4;
+$atom-light-green: #50a14f;
+$atom-light-orange: #e45649;
+$atom-light-red: #c91243;
+$atom-light-brown: #986801;
+$atom-light-yellow:#c18401;
+
+// Color palette taken directly from GitHub's Primer CSS
+// These have different shades
+$purple: #6f42c1;
+$yellow: #ffd33d;
+$orange: #f66a0a;
+$green: #28a745;
+$gray: #51737d;
+$blue: #0366d6;
+$red: #d73a49;
+
+// These fade
+$black: #1b1f23;
+$white: #ffffff;
+
+// foreground colors
+$purple-000: #f5f0ff;
+$purple-100: #e6dcfd;
+$purple-200: #d1bcf9;
+$purple-300: #b392f0;
+$purple-400: #8a63d2;
+$purple-500: #6f42c1;
+$purple-600: #5a32a3;
+$purple-700: #4c2889;
+$purple-800: #3a1d6e;
+$purple-900: #29134e;
+
+$yellow-000: #fffdef;
+$yellow-100: #fffbdd;
+$yellow-200: #fff5b1;
+$yellow-300: #ffea7f;
+$yellow-400: #ffdf5d;
+$yellow-500: #ffd33d;
+$yellow-600: #f9c513;
+$yellow-700: #dbab09;
+$yellow-800: #b08800;
+$yellow-900: #735c0f;
+
+$orange-000: #fff8f2;
+$orange-100: #ffebda;
+$orange-200: #ffd1ac;
+$orange-300: #ffab70;
+$orange-400: #fb8532;
+$orange-500: #f66a0a;
+$orange-600: #e36209;
+$orange-700: #d15704;
+$orange-800: #c24e00;
+$orange-900: #a04100;
+
+$green-000: #f0fff4;
+$green-100: #dcffe4;
+$green-200: #bef5cb;
+$green-300: #85e89d;
+$green-400: #34d058;
+$green-500: #28a745;
+$green-600: #22863a;
+$green-700: #176f2c;
+$green-800: #165c26;
+$green-900: #144620;
+
+$gray-000: #fafbfc;
+$gray-100: #f6f8fa;
+$gray-200: #e1e4e8;
+$gray-300: #d1d5da;
+$gray-400: #959da5;
+$gray-500: #6a737d;
+$gray-600: #586069;
+$gray-700: #444d56;
+$gray-800: #2f363d;
+$gray-900: #24292e;
+
+$blue-000: #f1f8ff;
+$blue-100: #dbedff;
+$blue-200: #c8e1ff;
+$blue-300: #79b8ff;
+$blue-400: #2188ff;
+$blue-500: #0366d6;
+$blue-600: #005cc5;
+$blue-700: #044289;
+$blue-800: #032f62;
+$blue-900: #05264c;
+
+$red-000: #ffeef0;
+$red-100: #ffdce0;
+$red-200: #fdaeb7;
+$red-300: #f97583;
+$red-400: #ea4a5a;
+$red-500: #d73a49;
+$red-600: #cb2431;
+$red-700: #b31d28;
+$red-800: #9e1c23;
+$red-900: #86181d;
+
+$black-fade-15: rgba(27, 31, 35, 0.15);
+$black-fade-30: rgba(27, 31, 35, 0.3);
+$black-fade-50: rgba(27, 31, 35, 0.5);
+$black-fade-70: rgba(27, 31, 35, 0.7);
+$black-fade-85: rgba(27, 31, 35, 0.85);
+
+$white-fade-15: rgba(255, 255, 255, 0.15);
+$white-fade-30: rgba(255, 255, 255, 0.3);
+$white-fade-50: rgba(255, 255, 255, 0.5);
+$white-fade-70: rgba(255, 255, 255, 0.7);
+$white-fade-85: rgba(255, 255, 255, 0.85);
+
+// background colors
+$purple-bg: $purple-500;
+$yellow-bg: $yellow-500;
+$green-bg: $green-500;
+$gray-bg: $gray-100;
+$blue-bg: $blue-500;
+$red-bg: $red-500;
+
+// light background colors
+$purple-bg-light: $purple-000;
+$yellow-bg-light: $yellow-200;
+$green-bg-light: $green-100;
+$gray-bg-light: $gray-000;
+$blue-bg-light: $blue-000;
+$red-bg-light: $red-100;
+
+// dark background colors
+$gray-bg-dark: $gray-900;
+
+// utility colors
+$black-border: $black-fade-15;

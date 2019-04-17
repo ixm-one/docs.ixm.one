@@ -1,0 +1,48 @@
+<!doctype html>
+<html data-theme="dark" lang="{{ .Site.Language.Lang | default "en" }}" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css"-->
+<!--link rel="stylesheet" href="https://unpkg.com/awsm.css/dist/awsm_theme_pastel-pink.min.css" media="screen"-->
+    {{ $options := (dict "targetPath" "css/bundle.css" "outputStyle" "compressed") }}
+    {{ $main := resources.Get "css/main.scss" | resources.ToCSS $options | minify }}
+    <link rel="stylesheet" href="{{$main.RelPermalink}}">
+    <link rel="stylesheet" href="https://unpkg.com/inter-ui/inter.css">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
+          crossorigin="anonymous">
+    {{block "head" .}}{{end}}
+  </head>
+  <body>
+    <aside>
+      <a href="{{.Site.Home.Permalink}}">
+        <img src="/img/logo.png" height="250" width="250">
+      </a>
+      <nav>
+        <ul>
+        {{$current := .CurrentSection}}
+        {{range $section := .Site.Sections}}
+          <li>
+            <details {{if eq $current.UniqueID $section.UniqueID}}open{{end}}>
+              <summary>{{$section.Title}}</summary>
+              <ul>
+                {{range $section.Pages}}
+                <li><a href="{{.Permalink}}">{{.Title}}</a></li>
+                {{end}}
+              </ul>
+            </details>
+          </li>
+        {{end}}
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      {{block "main" .}}
+        <h1>{{.Title}}</h1>
+        {{.Content}}
+      {{end}}
+    </main>
+  </body>
+</html>

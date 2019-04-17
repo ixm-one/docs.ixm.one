@@ -1,0 +1,23 @@
+%nav-element {
+  padding: 7px 12px;
+  font-weight: bold;
+  white-space: nowrap;
+  border: 1px solid var(--nav-border);
+  border-radius: 5px;
+  &:hover { background-color: var(--nav-hover); }
+}
+
+main nav {
+  display: flex;
+  margin {
+    bottom: 1em;
+    top: 1em;
+  }
+  align-items: center;
+  justify-content: space-between;
+  a { @extend %nav-element; }
+  span {
+    @extend %nav-element;
+    color: var(--nav-disabled);
+  }
+}

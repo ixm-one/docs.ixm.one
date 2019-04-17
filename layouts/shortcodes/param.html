@@ -1,0 +1,8 @@
+{{$id := .Get 0}}
+{{with .Parent}}
+  {{$id = printf "%s-%s" (.Get 0) $id}}
+{{end}}
+<dl class="parameters" id="{{$id | anchorize}}">
+  <dt>{{.Get 0}}</dt>
+  <dd>{{.Inner | markdownify}}</dd>
+</dl>

@@ -1,0 +1,205 @@
+$icon-font: 'Font Awesome 5 Free' !default;
+$code-font: 'Fira Code' !default;
+$text-font: 'Inter' !default;
+$bomb-icon: "\f1e2";
+$warn-icon: "\f071";
+$info-icon: "\f05a";
+$plus-icon: "\f0fe";
+$minus-icon: "\f146";
+
+@import 'details';
+@import 'mixin';
+@import 'color';
+@import 'paginate';
+@import 'code';
+@import 'alert';
+
+:root {
+  --background-color: #{$gray-100};
+  --font-color: #{$gray-900};
+
+  --url-color: #{$blue-400};
+  --url-hover-color: #{$blue-500};
+
+  --selection-background: #ffe9b4;
+
+  --nav-border: #{$black-fade-30};
+  --nav-disabled: #{$gray-300};
+
+  --aside-border: #{$black-fade-50};
+
+  --code-background: #{$red-000};
+  --code-color: #{$red-500};
+
+  --code-block-background: #282c34;
+  --code-block-text: #abb2bf;
+  --code-block-shadow: #{$black-fade-50};
+
+  --code-block-base: #{atom-dark-base};
+  --code-block-border: #2d6da3;
+  --code-block-blue: #61aeee;
+  --code-block-red: #f92627;
+  --code-block-cyan: #56b6c2;
+  --code-block-green: #9ccc65;
+  --code-block-yellow: #e6c07b;
+  --code-block-orange: #d19a66;
+  --code-block-purple: #b18eb1;
+
+  --danger-background: #{$red-500};
+  --danger-border: #{$red-500};
+  --danger-text: #{$red-100};
+}
+
+[data-theme="dark"] {
+  --background-color: #{$gray-900};
+  --font-color: #{$gray-000};
+
+  --url-color: #{$blue-400};
+  --url-hover-color: #{$blue-300};
+
+  --selection-background: #8189ae;
+
+  --nav-border: #{$white-fade-30};
+  --nav-hover: #{black-fade-85};
+  --nav-disabled: #{$gray-700};
+
+  --aside-border: #{$white-fade-50};
+
+  --code-block-border: #fda338;
+  --code-block-background: #fafafa;
+  --code-block-text: #383a42;
+  --code-block-blue: #0184bb;
+  --code-block-cyan: #4078f2;
+  --code-block-purple: #a626a4;
+
+  --code-block-shadow: #{$white-fade-50};
+  --code-background: #{$blue-900};
+  --code-color: #{$blue-300};
+
+  --danger-background: #{$red-900};
+  --danger-border: #{$red-500};
+  --danger-text: #{$red-100};
+}
+
+body {
+  grid-template-columns: 1fr 250px 800px 1fr;
+  display: grid;
+  & > aside {
+    grid-column: 2;
+    ul {
+      list-style-type: none;
+    }
+  }
+  & > main {
+    grid-column: 3;
+    align-self: start;
+  }
+}
+
+a[href^="https://"]::after {
+  font-family: $icon-font;
+  font-weight: 900;
+  content: "\f360";
+  padding-left: 0.1em;
+  font-size: 0.75em;
+  vertical-align: top;
+  line-height: 1.6em;
+}
+
+var {
+  &::before { content: '<'; }
+  &::after { content: '>'; }
+}
+
+h2[id]:hover::after {
+  font-family: $icon-font;
+  font-weight: 900;
+  content: "\f0c1";
+  padding-left: 0.2em;
+  font-size: 0.75em;
+  line-height: 1em;
+  color: $blue-300;
+}
+
+::selection {
+  background-color: var(--selection-background);
+  color: var(--font-color);
+}
+
+body {
+  background-color: var(--background-color);
+  font: { family: $text-font; }
+  color: var(--font-color);
+  text-rendering: optimizeLegibility;
+  line-height: 1.45em;
+}
+
+main {
+  grid-template-columns: 1fr 1fr 20px minmax(720px, 3fr) 20px 1fr 1fr;
+  grid-template-rows: auto;
+  display: grid;
+  font-family: $text-font;
+  & > * { grid-column: 4; }
+}
+
+figure { justify-self: center; }
+
+a {
+  text-decoration: none;
+  color: var(--url-color);
+  font-weight: bold;
+  &:hover { color: var(--url-hover-color); }
+}
+
+pre { grid-column: 3 / 6; }
+
+code {
+  font-family: $code-font;
+  font-weight: bold;
+  color: var(--code-color);
+  background-color: var(--code-background);
+  border-radius: 5px;
+  padding: 0 0.25em;
+  line-height: 1.2em;
+}
+
+h1 { font-size: 32px; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; }
+h4 { font-size: 16px; }
+
+pre > code {
+  border-left: .5rem solid var(--code-block-border);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 var(--code-block-shadow);
+  font-family: $code-font;
+  font-weight: bold;
+  line-height: 1.3em;
+  overflow-x: auto;
+  display: block;
+  padding: 0.5em;
+  margin: 0 auto;
+  background: var(--code-block-background);
+  color: var(--code-block-text);
+}
+
+ul {
+  list-style: disc inside;
+  ul { list-style-type: circle; }
+}
+
+h3 {
+  &.parameters,&.description {
+    border: 0;
+    border-bottom: .1rem solid $white-fade-30;
+    width: 100%;
+  }
+}
+
+dl.parameters {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  dt { font-weight: bold; margin: .5rem 2rem 0 0; grid-column: 1; }
+  dd { margin: .5rem 0; }
+  dd + dd { grid-column: 2; }
+}

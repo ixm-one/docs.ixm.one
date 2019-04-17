@@ -1,0 +1,13 @@
+summary {
+  list-style-type: none;
+  &::before {
+    content: $plus-icon;
+    font-family: $icon-font;
+    padding-right: .25em;
+  }
+  &:hover { cursor: pointer; }
+}
+
+details[open] summary::before {
+  content: $minus-icon;
+}

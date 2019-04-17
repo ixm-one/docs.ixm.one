@@ -1,0 +1,14 @@
+root = "//cdnjs.cloudflare.com/ajax/libs/highlight.js"
+version = "9.14.2"
+crossorigin = "anonymous"
+
+[[script]]
+file = "highlight.min.js"
+integrity = "sha256-sNPiigbfSkqUzMc5rgrdztLnneCMAp6W9wetJUZu9Zw="
+
+[[css]]
+file = "styles/atom-one-dark-reasonable.min.css"
+integrity = "sha256-K3aXfTeK81xELDIVQdbmzCE/lkh8ehlUCsEUV7HfRTg="
+
+[language]
+plaintext = "sha256-AOlkhqd+EsMK9YLfQVRrAeXY0R7Yb1ZF80rqZqDLVus="

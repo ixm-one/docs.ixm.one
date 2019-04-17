@@ -1,0 +1,13 @@
+// Colors pulled from atom-one-dark-reasonable
+
+code {
+  function { color: var(--code-block-blue); }
+  builtin { color: var(--code-block-red); }
+  literal { color: var(--code-block-cyan); }
+  string { color: var(--code-block-green); }
+  module { color: var(--code-block-yellow); }
+  number { color: var(--code-block-orange); }
+  var { color: var(--code-block-purple); }
+}
+
+

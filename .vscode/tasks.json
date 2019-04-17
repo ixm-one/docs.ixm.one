@@ -1,0 +1,39 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "process",
+            "command": "hugo",
+            "args": ["--gc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "problemMatcher": {
+              "source": "hugo",
+              "fileLocation": ["absolute"],
+              "pattern": {
+                "regexp": "Error: \"(.*):(\\d+):(\\d+)\": (.*)",
+                "file": 1,
+                "line": 2,
+                "column": 3,
+                "message": 4
+              }
+            }
+        }
+    ]
+}
